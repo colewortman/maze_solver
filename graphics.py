@@ -9,7 +9,6 @@ class Window:
         self.__canvas = Canvas(self.__root, bg="white", height=height, width=width)
         self.__canvas.pack(fill=BOTH, expand=1)
         self.__running = False
-        self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
     def redraw(self):
         self.__root.update_idletasks()
@@ -27,10 +26,12 @@ class Window:
     def close(self):
         self.__running = False
 
-class Point():
+
+class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
 
 class Line:
     def __init__(
